@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  authGo:
+    image: sainageswar/kotlang-auth:6eac0714ba46541184e8291327150bc39d104117
+    ports:
+      - "8081:8081"
+      - "5051:5051"
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+  socialGo:
+    image: sainageswar/kotlang-social:aa0431f2da4afddccc864e8df78371fe7f18b8e2
+    ports:
+      - "8082:8081"
+      - "5052:5051"
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - AUTH_TARGET=authGo:5051
