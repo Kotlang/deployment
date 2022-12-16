@@ -1,5 +1,7 @@
 # Kotlang Services Deployment
-This repository contains the deployment files for the Kotlang services.
+This repository contains the deployment files for the Kotlang services. Below deployment lets us deploy any number of services and protocols (HTTP/2, HTTP/1.1, HTTPS) behind a single load balancer. Thus, we can deploy multiple services with their gRpc and web proxy version together. 
+
+Below deployment constitutes services and routing in a single node. We can deploy the services in multiple nodes by using a load balancer on top of nginx routing of single node.
 
 ## File Details
 - `docker-compose.yml` - The docker compose file for the services. This file is used to deploy the services on a single machine. 
@@ -9,6 +11,16 @@ In docker-compose an independent network is created. One service can call anothe
 - `nginx.conf` - The nginx configuration file. This file is used to configure the nginx server. The nginx server is used to route the requests to the appropriate service. It uses sub-domain based routing. For example, the `socialGo` service is available at `social.neptune.co`. 
 
 Only ports of the nginx server are exposed to the outside world.
+
+Deployment:
+```bash
+docker compose up -d
+```
+
+Stopping services:
+```bash
+docker compose down
+```
 
 ## LetsEncrypt and Certbot
 LetsEncrypt provides free SSL certificates. Certbot is a tool to automate the process of getting and renewing the SSL certificates. Certbot is used to get the SSL certificates for the sub-domains. The certificates are stored in the `certs` directory. The certificates are renewed automatically by certbot.
@@ -38,3 +50,8 @@ If you like Certbot, please consider supporting our work by:
 ```
 
 `docker compose run` enables us to run individual commands in a service. The `--rm` flag removes the container after the command is executed.
+
+Renew certificate using:
+```
+docker compose run --rm certbot renew
+```
