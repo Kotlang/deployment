@@ -29,7 +29,7 @@ nginx and certbot interact with each other through shared volumes.
 
 Certbot command to get certificate:
 ```
-root@kotlang-ubuntu:~/kotlang-cluster# docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d navachar.co
+root@kotlang-ubuntu:~/kotlang-cluster# docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d *.navachar.co
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Requesting a certificate for navachar.co
 
