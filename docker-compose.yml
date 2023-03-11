@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:7befb15f598b5defd9b4835bc4775fa8bde895f7
+    image: sainageswar/kotlang-auth:998a0a3a7e14a915ed626e102c43963d8d6b4c55
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
