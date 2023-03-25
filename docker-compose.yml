@@ -7,7 +7,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:fdca39a806b261253881fb423721a6fd6c898666
+    image: sainageswar/kotlang-social:ddb3709cb06381d8692bf85117130cefc88dbfe6
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
