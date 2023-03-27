@@ -7,12 +7,18 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:ddb3709cb06381d8692bf85117130cefc88dbfe6
+    image: sainageswar/kotlang-social:9e0769a88aa43fff9324f6ce996cab4ec3473583
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
+  localizationGo:
+    image: sainageswar/kotlang-localizer:db19de9ad17ae8a1b6769b2e669285840c101030
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   nginx:
     image: nginx:1.19.6
     ports:
