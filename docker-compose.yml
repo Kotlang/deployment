@@ -20,7 +20,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   navacharApp:
-    image: sainageswar/kotlang-navacharapp:746939c9791b5070d599f84ddb1950147b753a1b
+    image: sainageswar/kotlang-navacharapp:d85f1def324be639fd5b48acfeb2ea5237e0d8fd
   nginx:
     image: nginx:1.19.6
     ports:
