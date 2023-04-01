@@ -19,6 +19,8 @@ services:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+  navacharApp:
+    image: sainageswar/kotlang-navacharapp:91102455ab4220cb4bd6ab556b2efccd754bb791
   nginx:
     image: nginx:1.19.6
     ports:
@@ -32,6 +34,8 @@ services:
     depends_on:
       - authGo
       - socialGo
+      - localizationGo
+      - navacharApp
   certbot:
     image: certbot/certbot:latest
     volumes:
