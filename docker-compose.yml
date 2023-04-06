@@ -23,7 +23,7 @@ services:
     image: sainageswar/kotlang-navacharapp:b5fe2c13e508f05f00cd0a189ed6a0f28c34d3b1
     environment:
       - SOCIAL_TARGET=socialGo:50051
-      - DEFAULT_USER_JWT_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw"
+      - DEFAULT_USER_JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
   nginx:
     image: nginx:1.19.6
     ports:
