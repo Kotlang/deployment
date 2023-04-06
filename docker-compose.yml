@@ -20,8 +20,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   navacharApp:
-    image: sainageswar/kotlang-navacharapp:829574519c7d515d8e86cc312d65fc00fecf0483
-    environment:
+    image: sainageswar/kotlang-navacharapp:f4d08bd85ac6f7f74dac92a46b7892682ae532b5
       - SOCIAL_TARGET=socialGo:50051
       - DEFAULT_USER_JWT_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuZXB0dW5lIiwianRpIjoiT0RBMU5EazRORE0xTUE9PSIsInN1YiI6ImRlZmF1bHQifQ.-Y3SNYj1tf4K5gD0RnsFswUkzmeGVC9LLwO0jf4rQ-4"
   nginx:
