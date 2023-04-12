@@ -14,16 +14,17 @@ services:
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
   localizationGo:
-    image: sainageswar/kotlang-localizer:85833b045f0c079ee5c4b19761ace18ae9015134
+    image: sainageswar/kotlang-localizer:19352a3df87bd3d4cf869c32cb3583694997f18e
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   navacharApp:
-    image: sainageswar/kotlang-navacharapp:fb45715abcf4ad4d0b608443817c9b93ce6761d9
+    image: sainageswar/kotlang-navacharapp:b5337e58c9c189a30b2f5ed9d82ff355aebfc8c5
     environment:
       - SOCIAL_TARGET=socialGo:50051
-      - DEFAULT_USER_JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
+      - DEFAULT_USER_JWT_TOKEN_PROD=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
+      - DEFAULT_USER_JWT_TOKEN_DEV=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuZXB0dW5lIiwianRpIjoiT0RBMU5EazRORE0xTUE9PSIsInN1YiI6ImRlZmF1bHQifQ.-Y3SNYj1tf4K5gD0RnsFswUkzmeGVC9LLwO0jf4rQ-4
   nginx:
     image: nginx:1.19.6
     ports:
