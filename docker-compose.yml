@@ -6,6 +6,8 @@ services:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+    env_file:
+      - .env
   socialGo:
     image: sainageswar/kotlang-social:9e0769a88aa43fff9324f6ce996cab4ec3473583
     environment:
@@ -13,12 +15,16 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
+    env_file:
+      - .env
   localizationGo:
     image: sainageswar/kotlang-localizer:19352a3df87bd3d4cf869c32cb3583694997f18e
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+    env_file:
+      - .env
   navacharApp:
     image: sainageswar/kotlang-navacharapp:b42f85c5417b8431decf24bd606f30b2622e8dcb
     environment:
