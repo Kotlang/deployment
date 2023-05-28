@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:25f469cc596568d429a879616ae3b719dea3c2c5
+    image: sainageswar/kotlang-auth:185b3d7c926b372a47c8c35e7746e8ba0c503edc
     env_file:
       - .env
     environment:
@@ -17,6 +17,14 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
+  notificationGo:
+    image: sainageswar/kotlang-notification:ae2f0ee3db9731e0ef6db7b6120e824ca8380930
+    env_file:
+      - .env
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   localizationGo:
     image: sainageswar/kotlang-localizer:77f159672238305499e2e4c2ca30a80998d75218
     env_file:
