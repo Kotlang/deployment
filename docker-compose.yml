@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:25f469cc596568d429a879616ae3b719dea3c2c5
+    image: sainageswar/kotlang-auth:185b3d7c926b372a47c8c35e7746e8ba0c503edc
     env_file:
       - .env
     environment:
@@ -18,7 +18,7 @@ services:
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:6e88d8cbeeb60a38f53138c3e8e4cacfe0744ba6
+    image: sainageswar/kotlang-notification:ae2f0ee3db9731e0ef6db7b6120e824ca8380930
     env_file:
       - .env
     environment:
