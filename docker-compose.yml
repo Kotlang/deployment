@@ -17,6 +17,14 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
+  notificationGo:
+    image: sainageswar/kotlang-notification:6e88d8cbeeb60a38f53138c3e8e4cacfe0744ba6
+    env_file:
+      - .env
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   localizationGo:
     image: sainageswar/kotlang-localizer:77f159672238305499e2e4c2ca30a80998d75218
     env_file:
