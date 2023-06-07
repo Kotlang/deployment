@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:185b3d7c926b372a47c8c35e7746e8ba0c503edc
+    image: sainageswar/kotlang-auth:419c7d4ade971e43392d775396ecea97b3aa0c7e
     env_file:
       - .env
     environment:
@@ -9,7 +9,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:db7e6aab8fffcaeee5d06ed9f4c8b91a18d76768
+    image: sainageswar/kotlang-social:1a8ee085dc28c701edfd82d3d03dd05c93da9069
     env_file:
       - .env
     environment:
