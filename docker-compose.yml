@@ -18,7 +18,7 @@ services:
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:ae2f0ee3db9731e0ef6db7b6120e824ca8380930
+    image: sainageswar/kotlang-notification:0954b68dd12d0601b22b704dc922a59ce4900fff
     env_file:
       - .env
     environment:
