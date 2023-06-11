@@ -19,7 +19,7 @@ services:
       - AUTH_TARGET=authGo:50051
       - NOTIFICATION_TARGET=notificationGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:22a434b933a0f3b5697f76c5c6295ce1a5f28fa8
+    image: sainageswar/kotlang-notification:a10d77beb468299f9e5a0aaaa53b6c42bed4154a
     env_file:
       - .env
     environment:
