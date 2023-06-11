@@ -9,7 +9,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:1a8ee085dc28c701edfd82d3d03dd05c93da9069
+    image: sainageswar/kotlang-social:cd3e22733dc640b17c012f6a73ada7d3cde77a2e
     env_file:
       - .env
     environment:
@@ -17,8 +17,9 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - AUTH_TARGET=authGo:50051
+      - NOTIFICATION_TARGET=notificationGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:0954b68dd12d0601b22b704dc922a59ce4900fff
+    image: sainageswar/kotlang-notification:22a434b933a0f3b5697f76c5c6295ce1a5f28fa8
     env_file:
       - .env
     environment:
