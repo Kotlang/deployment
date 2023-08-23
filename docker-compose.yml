@@ -1,5 +1,13 @@
 version: '3.9'
 services:
+  adminPortal:
+    image: thisisprince/kotlang-admin-panel:4efe15d19322cce87c492dba459aa61f1b50dd7c
+    env_file:
+      - .env
+    environment:
+      - REACT_APP_AUTH_URL=http://authGo:443
+      - REACT_APP_LOCALIZATION_URL=http://localizationGo:443
+      - REACT_APP_AUTH_DOMAIN=${REACT_APP_AUTH_DOMAIN}
   authGo:
     image: sainageswar/kotlang-auth:419c7d4ade971e43392d775396ecea97b3aa0c7e
     env_file:
@@ -55,6 +63,7 @@ services:
       - socialGo
       - localizationGo
       - navacharApp
+      - adminPortal
   certbot:
     image: certbot/certbot:latest
     volumes:
