@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:9085a8bb5011095f73cdddfb0f21ccb5383ab629
+    image: sainageswar/kotlang-auth:8fadbf96c1b9480bab9272317295cde953d1920f
     env_file:
       - .env
     environment:
