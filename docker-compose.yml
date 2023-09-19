@@ -9,7 +9,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:28953553282a3ab4649d097e91c6a844d2d54144
+    image: sainageswar/kotlang-social:ecefa418d174a06e2185c112d9472b837497da6b
     env_file:
       - .env
     environment:
