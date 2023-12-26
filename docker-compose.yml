@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:755cb5800836a88a7cc326b2459544efea1c0b0b
+    image: sainageswar/kotlang-auth:7f7a4c8ad8f89b97937cb6c4128610c5146621a1
     env_file:
       - .env
     environment:
@@ -9,7 +9,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:520665538d9167109e9c29e49d8fbf2fee0a67e2
+    image: sainageswar/kotlang-social:cda8e4f1202e4c134b74cd6afa38427391556d3e
     env_file:
       - .env
     environment:
@@ -19,13 +19,16 @@ services:
       - AUTH_TARGET=authGo:50051
       - NOTIFICATION_TARGET=notificationGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:a10d77beb468299f9e5a0aaaa53b6c42bed4154a
+    image: sainageswar/kotlang-notification:b9fb2a9e08e3c2ed85b0979eb5c6c42d20a14aa7
     env_file:
       - .env
     environment:
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - SOCIAL_TARGET=socialGo:50051
+      - DEFAULT_USER_JWT_TOKEN_PROD=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
+      - DEFAULT_USER_JWT_TOKEN_DEV=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuZXB0dW5lIiwianRpIjoiT0RBMU5EazRORE0xTUE9PSIsInN1YiI6ImRlZmF1bHQifQ.-Y3SNYj1tf4K5gD0RnsFswUkzmeGVC9LLwO0jf4rQ-4
   localizationGo:
     image: sainageswar/kotlang-localizer:77f159672238305499e2e4c2ca30a80998d75218
     env_file:
