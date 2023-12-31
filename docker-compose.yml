@@ -43,6 +43,12 @@ services:
       - SOCIAL_TARGET=socialGo:50051
       - DEFAULT_USER_JWT_TOKEN_PROD=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
       - DEFAULT_USER_JWT_TOKEN_DEV=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuZXB0dW5lIiwianRpIjoiT0RBMU5EazRORE0xTUE9PSIsInN1YiI6ImRlZmF1bHQifQ.-Y3SNYj1tf4K5gD0RnsFswUkzmeGVC9LLwO0jf4rQ-4
+  geminiApp:
+    image: gemini:1.0.1
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      - myVol:/app
   nginx:
     image: nginx:1.19.6
     ports:
@@ -56,10 +62,13 @@ services:
     depends_on:
       - authGo
       - socialGo
-      - localizationGo
+      - localizationGo  
       - navacharApp
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
+      
+volumes:
+  myVol:
