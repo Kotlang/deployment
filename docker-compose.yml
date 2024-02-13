@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: sainageswar/kotlang-auth:7f7a4c8ad8f89b97937cb6c4128610c5146621a1
+    image: navachar/kotlang-auth:90050bb4ffbc5afc82c45d9dc055c6faa64bc1bb
     env_file:
       - .env
     environment:
@@ -9,7 +9,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   socialGo:
-    image: sainageswar/kotlang-social:cda8e4f1202e4c134b74cd6afa38427391556d3e
+    image: navachar/kotlang-social:ef9337eded7d5ec15f3f44d7b9c1766024471f15
     env_file:
       - .env
     environment:
@@ -19,7 +19,7 @@ services:
       - AUTH_TARGET=authGo:50051
       - NOTIFICATION_TARGET=notificationGo:50051
   notificationGo:
-    image: sainageswar/kotlang-notification:b9fb2a9e08e3c2ed85b0979eb5c6c42d20a14aa7
+    image: navachar/kotlang-notification:ea6e8ed11a9089a4d55b3409bc6bbf96aa5bdd90
     env_file:
       - .env
     environment:
@@ -30,7 +30,7 @@ services:
       - DEFAULT_USER_JWT_TOKEN_PROD=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
       - DEFAULT_USER_JWT_TOKEN_DEV=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuZXB0dW5lIiwianRpIjoiT0RBMU5EazRORE0xTUE9PSIsInN1YiI6ImRlZmF1bHQifQ.-Y3SNYj1tf4K5gD0RnsFswUkzmeGVC9LLwO0jf4rQ-4
   localizationGo:
-    image: sainageswar/kotlang-localizer:77f159672238305499e2e4c2ca30a80998d75218
+    image: navachar/kotlang-localizer:70e78066380ad0e0100b7c5d2babc0d9309d3740
     env_file:
       - .env
     environment:
@@ -38,7 +38,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
   navacharApp:
-    image: sainageswar/kotlang-navacharapp:dd7ced9b193c3a524927d0f0d332dddaf11a8f9f
+    image: navachar/kotlang-navacharapp:73c257bae9fff1eb421b6fbe13cf17897c46cdd0
     environment:
       - SOCIAL_TARGET=socialGo:50051
       - DEFAULT_USER_JWT_TOKEN_PROD=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYXZhY2hhciIsImp0aSI6Ik9EQTFORGs0TkRNMU1BPT0iLCJzdWIiOiJkZWZhdWx0In0.o98y6FMmkk2Ue0xPHQMWqEFAcBakYvfDVniRx1Aj7Lw
