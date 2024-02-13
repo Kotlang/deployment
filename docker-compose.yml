@@ -45,6 +45,7 @@ services:
       - socialGo
       - localizationGo
       - navacharApp
+      - navacharWebsite
   certbot:
     image: certbot/certbot:latest
     volumes:
