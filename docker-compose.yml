@@ -4,6 +4,8 @@ services:
     image: navachar/kotlang-auth:90050bb4ffbc5afc82c45d9dc055c6faa64bc1bb
     env_file:
       - .env
+    environment:
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
   socialGo:
     image: navachar/kotlang-social:ef9337eded7d5ec15f3f44d7b9c1766024471f15
     env_file:
@@ -11,20 +13,28 @@ services:
     environment:
       - AUTH_TARGET=authGo:50051
       - NOTIFICATION_TARGET=notificationGo:50051
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+
   notificationGo:
     image: navachar/kotlang-notification:ea6e8ed11a9089a4d55b3409bc6bbf96aa5bdd90
     env_file:
       - .env
     environment:
       - SOCIAL_TARGET=socialGo:50051
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+
   localizationGo:
     image: navachar/kotlang-localizer:70e78066380ad0e0100b7c5d2babc0d9309d3740
     env_file:
       - .env
+    environment:
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
   navacharApp:
     image: navachar/kotlang-navacharapp:73c257bae9fff1eb421b6fbe13cf17897c46cdd0
     environment:
       - SOCIAL_TARGET=socialGo:50051
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+
   navacharWebsite:
     image: navachar/kotlang-navachar-website:f8fdda501791386dfe91681bbcdf5678c6d98ca9
   nginx:
