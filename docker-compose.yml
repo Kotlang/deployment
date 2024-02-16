@@ -36,7 +36,7 @@ services:
       - GCP_PROJECT_ID=${GCP_PROJECT_ID}
 
   navacharWebsite:
-    image: navachar/kotlang-navachar-website:f8fdda501791386dfe91681bbcdf5678c6d98ca9
+    image: navachar/kotlang-navachar-website:30175a7cfbcaabc5b8e998f8be15c3b8afa0cfd1
   nginx:
     image: nginx:1.19.6
     ports:
