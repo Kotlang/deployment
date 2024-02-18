@@ -7,7 +7,7 @@ services:
     environment:
       - GCP_PROJECT_ID=${GCP_PROJECT_ID}
   socialGo:
-    image: navachar/kotlang-social:ce22fd4f115643352b1e251081c62d73caec10f7
+    image: navachar/kotlang-social:b4ad8cfb12f8c5e269290a3ea4a8a8fd31b5c8db
     env_file:
       - .env
     environment:
