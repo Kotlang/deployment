@@ -35,7 +35,7 @@ services:
       - SOCIAL_TARGET=socialGo:50051
       - GCP_PROJECT_ID=${GCP_PROJECT_ID}
   navacharAdminPanel:
-    image: navachar/kotlang-navachar-admin-panel:d929da94ef33ba57a1d6e1505b6b217d498c2ecf
+    image: navachar/kotlang-navachar-admin-panel:4bc8623317b067964bcf30c0b2c80faaf0dbceb4
   navacharWebsite:
     image: navachar/kotlang-navachar-website:30175a7cfbcaabc5b8e998f8be15c3b8afa0cfd1
   nginx:
