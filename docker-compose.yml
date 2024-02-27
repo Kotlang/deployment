@@ -37,7 +37,7 @@ services:
   navacharAdminPanel:
     image: navachar/kotlang-navachar-admin-panel:f9bca98b171ee03bd07abba71d5e81cab1675ad4
   navacharWebsite:
-    image: navachar/kotlang-navachar-website:255d78873e00b6817295663d398cf247f6be4d06
+    image: navachar/kotlang-navachar-website:1185d336c0aeba49d02cdb6c9be8870b55dd1afb
   nginx:
     image: nginx:1.19.6
     ports:
