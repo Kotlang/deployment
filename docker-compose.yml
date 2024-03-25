@@ -20,6 +20,7 @@ services:
     env_file:
       - .env
     environment:
+      - AUTH_TARGET=authGo:50051
       - SOCIAL_TARGET=socialGo:50051
       - GCP_PROJECT_ID=${GCP_PROJECT_ID}
 
