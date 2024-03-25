@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: navachar/kotlang-auth:9dc510d3ff9d1ea29bc23c050f6848d7d36551ea
+    image: navachar/kotlang-auth:6abf70586f13bb79d3e4951635d16c4ff793d120
     env_file:
       - .env
     environment:
@@ -16,7 +16,7 @@ services:
       - GCP_PROJECT_ID=${GCP_PROJECT_ID}
 
   notificationGo:
-    image: navachar/kotlang-notification:ea6e8ed11a9089a4d55b3409bc6bbf96aa5bdd90
+    image: navachar/kotlang-notification:519208bec237dee187ebf726f24c4d8413efba9d
     env_file:
       - .env
     environment:
