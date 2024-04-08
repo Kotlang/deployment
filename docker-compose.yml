@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   authGo:
-    image: navachar/kotlang-auth:32eb31dc944a52c98a481e40ddb91141ca32cc2c
+    image: navachar/kotlang-auth:0c238fb70d12a57e70231dbcb7fc790c0fa1d60f
     env_file:
       - .env
     environment:
